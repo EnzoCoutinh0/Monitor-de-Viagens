@@ -390,8 +390,3 @@ https://github.com/EnzoCoutinh0
 
 ---
 
-## 📄 Licença
-
-Defina aqui a licença que deseja utilizar para o projeto antes de publicar.
-
-Se este projeto for utilizado como portfólio, recomenda-se escolher uma licença adequada ao nível de abertura que você deseja oferecer ao código.
