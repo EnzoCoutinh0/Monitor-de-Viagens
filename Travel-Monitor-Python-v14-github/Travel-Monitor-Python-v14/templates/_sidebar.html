@@ -1,0 +1,25 @@
+<aside class="sidebar">
+  <a class="brand" href="{{ url_for('dashboard') }}">
+    <div class="logo small">TM</div>
+    <div><b>Travel</b><small>Monitor</small></div>
+  </a>
+  <nav>
+    <span class="nav-label">PLANEJAMENTO</span>
+    <a class="nav-link {% if request.endpoint == 'dashboard' %}active{% endif %}" href="{{ url_for('dashboard') }}">⌕ Pesquisar viagem</a>
+    <a class="nav-link {% if request.endpoint == 'destinos_page' %}active{% endif %}" href="{{ url_for('destinos_page') }}">✦ 50 destinos</a>
+    <a class="nav-link {% if request.endpoint == 'roteiro_page' %}active{% endif %}" href="{{ url_for('roteiro_page') }}">🗺 Meu roteiro</a>
+    <a class="nav-link {% if request.endpoint == 'roteiro_compartilhado_page' %}active{% endif %}" href="{{ url_for('roteiro_compartilhado_page') }}">👥 Roteiro compartilhado</a>
+    <a class="nav-link {% if request.endpoint == 'grupo_page' %}active{% endif %}" href="{{ url_for('grupo_page') }}">✈ Viagem em grupo</a>
+    <a class="nav-link {% if request.endpoint == 'orcamento_page' %}active{% endif %}" href="{{ url_for('orcamento_page') }}">💰 Orçamento</a>
+    <a class="nav-link {% if request.endpoint == 'clima_page' %}active{% endif %}" href="{{ url_for('clima_page') }}">☀ Clima</a>
+    <a class="nav-link {% if request.endpoint == 'perfil' %}active{% endif %}" href="{{ url_for('perfil') }}">♡ Meu perfil</a>
+  </nav>
+  <div class="sidebar-bottom">
+    <strong>{{ user.nome if user is defined else nome }}</strong>
+    <small>{{ user.email if user is defined else 'Conta ativa' }}</small>
+    <form method="post" action="{{ url_for('logout') }}" class="logout-form">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <button class="logout" type="submit">↪ Sair</button>
+    </form>
+  </div>
+</aside>
