@@ -1,0 +1,50 @@
+<!-- Linha 1: Cria ou fecha um elemento HTML usado para estruturar a interface. -->
+<aside class="sidebar">
+  <!-- Linha 2: Cria um link para outra página ou ação. -->
+  <a class="brand" href="{{ url_for('dashboard') }}">
+    <!-- Linha 3: Cria ou fecha um elemento HTML usado para estruturar a interface. -->
+    <div class="logo small">TM</div>
+    <!-- Linha 4: Cria ou fecha um elemento HTML usado para estruturar a interface. -->
+    <div><b>Travel</b><small>Monitor</small></div>
+  <!-- Linha 5: Cria ou fecha um elemento HTML usado para estruturar a interface. -->
+  </a>
+  <!-- Linha 6: Cria ou fecha um elemento HTML usado para estruturar a interface. -->
+  <nav>
+    <!-- Linha 7: Cria ou fecha um elemento HTML usado para estruturar a interface. -->
+    <span class="nav-label">PLANEJAMENTO</span>
+    <!-- Linha 8: Cria um link para outra página ou ação. -->
+    <a class="nav-link {% if request.endpoint == 'dashboard' %}active{% endif %}" href="{{ url_for('dashboard') }}">⌕ Pesquisar viagem</a>
+    <!-- Linha 9: Cria um link para outra página ou ação. -->
+    <a class="nav-link {% if request.endpoint == 'destinos_page' %}active{% endif %}" href="{{ url_for('destinos_page') }}">✦ 50 destinos</a>
+    <!-- Linha 10: Cria um link para outra página ou ação. -->
+    <a class="nav-link {% if request.endpoint == 'roteiro_page' %}active{% endif %}" href="{{ url_for('roteiro_page') }}">🗺 Meu roteiro</a>
+    <!-- Linha 11: Cria um link para outra página ou ação. -->
+    <a class="nav-link {% if request.endpoint == 'roteiro_compartilhado_page' %}active{% endif %}" href="{{ url_for('roteiro_compartilhado_page') }}">👥 Roteiro compartilhado</a>
+    <!-- Linha 12: Cria um link para outra página ou ação. -->
+    <a class="nav-link {% if request.endpoint == 'grupo_page' %}active{% endif %}" href="{{ url_for('grupo_page') }}">✈ Viagem em grupo</a>
+    <!-- Linha 13: Cria um link para outra página ou ação. -->
+    <a class="nav-link {% if request.endpoint == 'orcamento_page' %}active{% endif %}" href="{{ url_for('orcamento_page') }}">💰 Orçamento</a>
+    <!-- Linha 14: Cria um link para outra página ou ação. -->
+    <a class="nav-link {% if request.endpoint == 'clima_page' %}active{% endif %}" href="{{ url_for('clima_page') }}">☀ Clima</a>
+    <!-- Linha 15: Cria um link para outra página ou ação. -->
+    <a class="nav-link {% if request.endpoint == 'perfil' %}active{% endif %}" href="{{ url_for('perfil') }}">♡ Meu perfil</a>
+  <!-- Linha 16: Cria ou fecha um elemento HTML usado para estruturar a interface. -->
+  </nav>
+  <!-- Linha 17: Cria ou fecha um elemento HTML usado para estruturar a interface. -->
+  <div class="sidebar-bottom">
+    <!-- Linha 18: Cria ou fecha um elemento HTML usado para estruturar a interface. -->
+    <strong>{{ user.nome if user is defined else nome }}</strong>
+    <!-- Linha 19: Cria ou fecha um elemento HTML usado para estruturar a interface. -->
+    <small>{{ user.email if user is defined else 'Conta ativa' }}</small>
+    <!-- Linha 20: Cria um formulário para entrada e envio de dados. -->
+    <form method="post" action="{{ url_for('logout') }}" class="logout-form">
+      <!-- Linha 21: Cria um campo de entrada para o usuário. -->
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <!-- Linha 22: Cria um botão interativo. -->
+      <button class="logout" type="submit">↪ Sair</button>
+    <!-- Linha 23: Cria ou fecha um elemento HTML usado para estruturar a interface. -->
+    </form>
+  <!-- Linha 24: Cria ou fecha um elemento HTML usado para estruturar a interface. -->
+  </div>
+<!-- Linha 25: Cria ou fecha um elemento HTML usado para estruturar a interface. -->
+</aside>

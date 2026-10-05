@@ -1,0 +1,28 @@
+<!-- Linha 1: Cria ou fecha um elemento HTML usado para estruturar a interface. -->
+<!doctype html>
+<!-- Linha 2: Inicia o elemento raiz da página HTML. -->
+<html lang="pt-BR">
+<!-- Linha 3: Inicia a área de metadados e recursos da página. -->
+<head>
+  <!-- Linha 4: Cria ou fecha um elemento HTML usado para estruturar a interface. -->
+  <meta charset="utf-8">
+  <!-- Linha 5: Cria ou fecha um elemento HTML usado para estruturar a interface. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Linha 6: Cria ou fecha um elemento HTML usado para estruturar a interface. -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <!-- Linha 7: Cria ou fecha um elemento HTML usado para estruturar a interface. -->
+  <title>{% block title %}Travel Monitor{% endblock %}</title>
+  <!-- Linha 8: Vincula um recurso externo, como uma folha de estilos CSS. -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <!-- Linha 9: Define conteúdo textual ou uma expressão de template exibida na página. -->
+  {% block head_extra %}{% endblock %}
+<!-- Linha 10: Cria ou fecha um elemento HTML usado para estruturar a interface. -->
+</head>
+<!-- Linha 11: Inicia o conteúdo visível da página. -->
+<body>
+  <!-- Linha 12: Define conteúdo textual ou uma expressão de template exibida na página. -->
+  {% block body %}{% endblock %}
+<!-- Linha 13: Cria ou fecha um elemento HTML usado para estruturar a interface. -->
+</body>
+<!-- Linha 14: Cria ou fecha um elemento HTML usado para estruturar a interface. -->
+</html>
